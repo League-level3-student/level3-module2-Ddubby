@@ -26,7 +26,6 @@ public class QuickSorter extends Sorter {
 		int pivot = array[(low + high) / 2];
 		// 4. make a while loop that goes while i is less than or equal to j
 		while (i <= j) {
-			display.updateDisplay();
 			while (array[i] < pivot) {
 				i++;
 			}
@@ -40,13 +39,16 @@ public class QuickSorter extends Sorter {
 				i++;
 				j--;
 			}
+			display.updateDisplay();
+		}
 			if (low < j) {
 				quickSort(array, low, j, display);
+				display.updateDisplay();
 			}
 			if (i < high) {
 				quickSort(array, i, high, display);
+				display.updateDisplay();
 			}
-		}
 		// 5. make a while loop that increments i while
 		// the array element at i is less than pivot
 

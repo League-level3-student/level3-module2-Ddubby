@@ -71,4 +71,35 @@ public class Algorithms {
 		return results;
 	}
 
+	public static List<String> sortDNA(List<String> sortedDNA){
+		for (int i = 0; i < sortedDNA.size() - 1; i++) {
+			if(sortedDNA.get(i).length() > sortedDNA.get(i + 1).length()) {
+				String temp = sortedDNA.get(i);
+				sortedDNA.set(i, sortedDNA.get(i + 1));
+				sortedDNA.set(i + 1, temp);
+				if (i == 0) {
+					i -= 1;
+				} else {
+					i -=2;
+				}
+			}
+		}
+		return sortedDNA;
+	}
+	
+	public static List<String> sortWords(List<String> words) {
+		for (int i = 0; i < words.size() - 1; i++) {
+			if(words.get(i).compareTo(words.get(i+1)) > 0) {
+				String temp = words.get(i);
+				words.set(i, words.get(i + 1));
+				words.set(i + 1, temp);
+				if (i == 0) {
+					i -= 1;
+				} else {
+					i -=2;
+				}
+			}
+		}
+		return words;
+	}
 }
